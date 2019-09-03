@@ -31,7 +31,13 @@ CREATE TABLE IF NOT EXISTS EMPLOYEE (
 More information about API functions at:
 [Kenzan-rs at Postman](https://app.getpostman.com/join-team?invite_code=c7d4b5a0d1896684159fca52976a818a)
 
-* Upload Employees File
+https://img.shields.io/badge/Method-POST-blue Upload Employees File
+
+```batch
+curl --location --request POST "http://localhost:63001/employee/employeeById?employeeId=2" \
+  --header "Content-Type: application/json" \
+  --data ""
+```
 * Get Employee by ID
 * Create new employees
 * Update existing employees

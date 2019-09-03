@@ -10,7 +10,7 @@ Kenzan-rs uses a MySQL database hosted in an AWS server and is already configure
 /src/main/java/com/kenzan/config/ApplicationCotextConfig.java
 ```
 
-To run with local DB, run the following script to create a local instance of the database and configure on previous ApplicationCotextConfig.java.
+To configure with local DB, run the following script to create a local instance of the database and set credentials on previous ApplicationCotextConfig.java.
 
 ```sql
 CREATE DATABASE employeedb;

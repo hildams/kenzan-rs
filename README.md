@@ -31,12 +31,7 @@ CREATE TABLE IF NOT EXISTS EMPLOYEE (
 More information about API functions at:
 [Kenzan-rs at Postman](https://www.getpostman.com/collections/82f6d1495ccac6f4bb75)
 
-*  ![](https://img.shields.io/badge/Upload%20File-POST-blue)
-```batch
-curl --location --request GET "http://localhost:63001/employee/uploadEmployees"
-```
-
-*  ![](https://img.shields.io/badge/Create%20Employee-POST-blue)
+![](https://img.shields.io/badge/Create%20Employee-POST-blue)
 ```batch
 curl --location --request POST "http://localhost:63001/employee/saveEmployee" \
   --header "Content-Type: application/json" \
@@ -47,10 +42,9 @@ curl --location --request POST "http://localhost:63001/employee/saveEmployee" \
     \"middleInitial\": \”Middle Initial\”,
     \"startDate\": \"Date\”
 }"
-
 ```
 
-*  ![](https://img.shields.io/badge/Update%20Employee-POST-blue)
+![](https://img.shields.io/badge/Update%20Employee-POST-blue)
 ```batch
 curl --location --request POST "http://localhost:63001/employee/updateEmployee" \
   --header "Content-Type: application/json" \
@@ -62,23 +56,26 @@ curl --location --request POST "http://localhost:63001/employee/updateEmployee" 
     \"middleInitial\": \”Middle Initial\”,
     \"startDate\": \"Date\”
 }"
-
 ```
-*  ![](https://img.shields.io/badge/Get%20Employee-POST-blue)
+
+![](https://img.shields.io/badge/Get%20Employee-POST-blue)
 ```batch
 curl --location --request POST "http://localhost:63001/employee/employeeById?employeeId=2" \
   --header "Content-Type: application/json" \
   --data ""
 ```
-
-*  ![](https://img.shields.io/badge/Get%20All%20Employee-GET-green)
+![](https://img.shields.io/badge/All%20Employees-GET-green)
 ```batch
 curl --location --request GET "http://localhost:63001/employee/listEmployees"
 ```
-
-*  ![](https://img.shields.io/badge/Delete%20AEmployee-DELETE-yellow)
+![](https://img.shields.io/badge/Upload%20File-POST-blue)
 ```batch
-curl --location --request GET "http://localhost:63001/employee/listEmployees"
+curl --location --request GET "http://localhost:63001/employee/uploadEmployees"
+```
+![](https://img.shields.io/badge/Delete%20AEmployee-DELETE-yellow)
+```batch
+curl --location --request DELETE "http://localhost:63001/employee/deleteEmployee?employeeId=3" \
+  --header "Content-Type: application/json"
 ```
 
 

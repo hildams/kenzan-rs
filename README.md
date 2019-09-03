@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS EMPLOYEE (
 ## Usage
 
 More information about API functions at:
-[Kenzan-rs at Postman](https://www.getpostman.com/collections/82f6d1495ccac6f4bb75)
+[Kenzan-rs at Postman](https://app.getpostman.com/join-team?invite_code=c7d4b5a0d1896684159fca52976a818a)
 
 * Upload Employees File
 * Get Employee by ID
@@ -54,3 +54,4 @@ Kenzan-rs  uses the following features:
 - Credential for Basic security Encrypted
 - Credentials for DB externalized and encrypted
 - Improve validation of batch upload fields
+- Integrate Swagger as API documentation

@@ -68,7 +68,7 @@ curl --location --request POST "http://localhost:63001/employee/employeeById?emp
 ```batch
 curl --location --request GET "http://localhost:63001/employee/listEmployees"
 ```
-![](https://img.shields.io/badge/Upload%20File-GET-green)
+![](https://img.shields.io/static/v1?label=Upload%20File&message=GET&color=green)
 ```batch
 curl --location --request GET "http://localhost:63001/employee/uploadEmployees"
 ```

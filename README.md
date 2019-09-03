@@ -6,9 +6,12 @@ a Java Rest API
 ## Dependencies
 
 Kenzan-rs uses a MySQL database hosted in an AWS server and is already configured on
+```bash
 /src/main/java/com/kenzan/config/ApplicationCotextConfig.java
+```
 
 To run with local DB, run the following script to create a local instance of the database and configure on previous ApplicationCotextConfig.java.
+
 ```sql
 CREATE DATABASE employeedb;
 

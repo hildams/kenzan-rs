@@ -5,7 +5,7 @@ a Java Rest API
 
 ## Dependencies
 
-Kenzan-rs uses a MySQL database hosted in an AWS server and is already configured on
+Kenzan-rs uses a MySQL database hosted in an AWS server and is already configured in file
 ```bash
 /src/main/java/com/kenzan/config/ApplicationCotextConfig.java
 ```
@@ -29,20 +29,57 @@ CREATE TABLE IF NOT EXISTS EMPLOYEE (
 ## Usage
 
 More information about API functions at:
-[Kenzan-rs at Postman](https://app.getpostman.com/join-team?invite_code=c7d4b5a0d1896684159fca52976a818a)
+[Kenzan-rs at Postman](https://www.getpostman.com/collections/82f6d1495ccac6f4bb75)
 
-![](https://img.shields.io/badge/Method-POST-blue) Upload Employees File
+*  ![](https://img.shields.io/badge/Upload%20File-POST-blue)
+```batch
+curl --location --request GET "http://localhost:63001/employee/uploadEmployees"
+```
 
+*  ![](https://img.shields.io/badge/Create%20Employee-POST-blue)
+```batch
+curl --location --request POST "http://localhost:63001/employee/saveEmployee" \
+  --header "Content-Type: application/json" \
+  --data "{
+    \"birthdate\": \”yourDate\”,
+    \"firstName\": \”Name\”,
+    \"lastName\": \”LastName\”,
+    \"middleInitial\": \”Middle Initial\”,
+    \"startDate\": \"Date\”
+}"
+
+```
+
+*  ![](https://img.shields.io/badge/Update%20Employee-POST-blue)
+```batch
+curl --location --request POST "http://localhost:63001/employee/updateEmployee" \
+  --header "Content-Type: application/json" \
+  --data "{
+    \"employeeId\": 1,
+    \"birthdate\": \”yourDate\”,
+    \"firstName\": \”Name\”,
+    \"lastName\": \”LastName\”,
+    \"middleInitial\": \”Middle Initial\”,
+    \"startDate\": \"Date\”
+}"
+
+```
+*  ![](https://img.shields.io/badge/Get%20Employee-POST-blue)
 ```batch
 curl --location --request POST "http://localhost:63001/employee/employeeById?employeeId=2" \
   --header "Content-Type: application/json" \
   --data ""
 ```
-* Get Employee by ID
-* Create new employees
-* Update existing employees
-* Delete employees
-* Get all employees
+
+*  ![](https://img.shields.io/badge/Get%20All%20Employee-GET-green)
+```batch
+curl --location --request GET "http://localhost:63001/employee/listEmployees"
+```
+
+*  ![](https://img.shields.io/badge/Delete%20AEmployee-DELETE-yellow)
+```batch
+curl --location --request GET "http://localhost:63001/employee/listEmployees"
+```
 
 
 ## Description

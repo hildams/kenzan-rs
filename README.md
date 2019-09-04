@@ -9,7 +9,7 @@ Recomended IDE for run and test are STS(Springboot suite tool) or Eclipse with S
 
 1.- Clone project from Git
 ```bash
- File -> Import -> Projects from Git -> Clone URL
+ File -> Import -> Projects from Git -> Clone URL -> Import as general project
 ```
 
 2.- Convert to Maven project using existing pom.xml

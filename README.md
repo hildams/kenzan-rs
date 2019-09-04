@@ -30,7 +30,7 @@ Kenzan-rs uses a MySQL database hosted in an AWS server and is already configure
 
 To configure with local DB:
 
-- [Download and install MySQL Server] (https://dev.mysql.com/downloads/installer)
+- [Download and install MySQL Server](https://dev.mysql.com/downloads/installer)
 
 - [Download and install MySQL Workbench](https://dev.mysql.com/downloads/workbench/5.2.html)
 

@@ -6,7 +6,7 @@ package com.kenzan.exception;
  * package: com.kenzan.exception<br>
  * Project: Kenzan-rs<br>
  * Description: <i></i>
-
+ * ObjectNotFoundExceptionHandler Custom Exception
  * Created on Sep 1, 2019<br>
  * @author Hilda Medina Segovia <br>
  * 

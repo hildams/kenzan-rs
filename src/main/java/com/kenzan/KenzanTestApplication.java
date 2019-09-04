@@ -4,7 +4,9 @@ package com.kenzan;
  * Class  : KenzanTestApplication.java<br>
  * package: com.kenzan.config<br>
  * Project: kenzan-rs<br>
- * Description: <i></i>
+ * Description: <i>
+ * Main Application class for Kenzan REST API
+ * </i>
  * <br>
  * Created on Aug 30, 2019<br>
  * @author Hilda Medina <br>

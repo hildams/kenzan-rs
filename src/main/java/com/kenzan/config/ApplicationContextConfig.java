@@ -24,8 +24,9 @@ import com.kenzan.domain.Employee;
  * Class  : ApplicationContextConfig.java<br>
  * package: com.kenzan.config<br>
  * Project: kenzan-rs<br>
- * Description: <i>Configuration Class</i>
-
+ * Description: <i>Configuration Class to generate a Factory session to dependency database MYSQL 
+ * and declare dependencies if needed.</i>
+ * 
  * <br>
  * Created on Aug 30, 2019<br>
  * @author Hilda Medina <br>

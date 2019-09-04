@@ -30,7 +30,9 @@ import com.kenzan.service.EmployeeRepository;
  * Class  : EmployeeController.java<br>
  * package: com.kenzan.controller<br>
  * Project: kenzan-rs<br>
- * Description: <i></i>
+ * Description: <i>
+ * Controller class to expose endpoints of the app
+ * </i>
  * 
  * Created on Aug 31, 2019<br>
  * @author Hilda Medina Segovia <br>
@@ -55,6 +57,12 @@ public class EmployeeController
    private Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
 
+   /**
+    *  @Method GET
+    *  /employees/listEmployees
+    *  @Return
+    *  retrieve and list all employees with available status in database
+    */
    @RequestMapping("/listEmployees")
    @ResponseBody
    public ResponseEntity<List<Employee>> getEmployees() throws Exception{
@@ -63,6 +71,15 @@ public class EmployeeController
       return ResponseEntity.ok(employees);
    }
 
+
+   /**
+    *  @Method POST
+    *  /employees/employeeById?employeeId=1
+    *  @Return
+    *  Employee with the id requested or exception if not found.
+    *  @Params
+    *  employeeId
+    */
    @RequestMapping("/employeeById")
    @ResponseBody
    public Employee getEmployeeById(@RequestParam("employeeId") int employeeId) throws Exception{
@@ -71,6 +88,14 @@ public class EmployeeController
 	    .orElseThrow(() -> new ObjectNotFoundExceptionHandler(employeeId)); 
    }
 
+   /**
+    *  @Method POST
+    *  /employees/saveEmployee
+    *  @Return
+    *  Employee created or exception if unable to create.
+    *  @Params
+    *  Employee data as JSON format in body
+    */
    @RequestMapping("/saveEmployee")
    @ResponseBody
    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) throws Exception{
@@ -79,10 +104,19 @@ public class EmployeeController
       if(emp != null){
 	 return  ResponseEntity.ok(emp);
       }else{
-	 throw new ObjectFailedExceptionHandler("Create");
+	 throw new ObjectFailedExceptionHandler("Create employee");
       }
    }
 
+
+   /**
+    *  @Method POST
+    *  /employees/updateEmployee
+    *  @Return
+    *  Employee updated or exception if unable to update.
+    *  @Params
+    *  Employee data as JSON format in body
+    */
    @RequestMapping("/updateEmployee")
    @ResponseBody
    public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) throws Exception{
@@ -101,6 +135,17 @@ public class EmployeeController
       }
    }
 
+
+   /**
+    *  @Method DELETE
+    *  /employees/deleteEmployee?employeeId=1
+    *  @Return
+    *  String message of success or error depending on operation status
+    *  @Params
+    *  employeeId
+    *  @Security
+    *  Basic Auth for role admin
+    */
    @RequestMapping(value ="/deleteEmployee",method = RequestMethod.DELETE)
    @ResponseBody
    public ResponseEntity<String> deleteEmployee(@RequestParam("employeeId") int employeeId) throws Exception{
@@ -115,17 +160,34 @@ public class EmployeeController
       }
    }
 
+
+   /**
+    *  @Method GET
+    *  /employees/uploadEmployees
+    *  @Return
+    *  String message with operation result
+    * 
+    */
    @RequestMapping("/uploadEmployees")
    @ResponseBody
    public ResponseEntity<String> uploadEmployees() throws Exception{
       logger.info("Loading employees from file");
-      
+
       String response =  loadEmployeesFromFile();
 
       return ResponseEntity.ok(response);
 
    }
 
+
+   /**
+    *  Parse and Iterate employees from file.
+    *  File path MUST be user.dir/uploads/
+    *  File extension must be csv with comma as separator value.
+    *  @Return
+    *  String message with operation result or exception if file not fount or parse error.
+    * 
+    */
    private String loadEmployeesFromFile()
    {
       int counterEmployee  = 0;
@@ -143,11 +205,21 @@ public class EmployeeController
 	 System.err.format("IOException: %s%n", e);
       }
 
-      return counterEmployee == 0 ? "Error while uploading employees, All fields are required." : counterEmployee+" out of"+counterLines+" employees loaded successfully";
+      return counterEmployee == 0 ? "Error while uploading employees, All fields are required." : counterEmployee+" out of "+counterLines+" employees loaded successfully";
 
 
    }
 
+
+
+   /**
+    *  Map employee from string line to Employee entity
+    *  All fields for employee are required. 
+    *  @Return
+    *  1 if employee succesfully created
+    *  0 if error while creating employee
+    * 
+    */
    private int mapEmployee(String s)
    {
 

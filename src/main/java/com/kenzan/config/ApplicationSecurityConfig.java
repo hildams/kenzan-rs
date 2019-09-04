@@ -13,7 +13,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * Class  : AppicationSecurityConfig.java<br>
  * package: com.kenzan.config<br>
  * Project: Kenzan-rs<br>
- * Description: <i></i>
+ * Description: <i>
+ * Security configuration class to define security level to endpoints.
+ * </i>
  * 
  * <br>
  * Created on Sep 1, 2019<br>
@@ -30,6 +32,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
 {
 
+   /**
+    *  Manager builder configuration to allow in memory building authentication:
+    *  Basic Auth.
+    */
    @Override
    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
        auth.inMemoryAuthentication()
@@ -38,8 +44,9 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter
        .roles("ADMIN");
    }
     
-  
-   
+   /**
+    *  Configure http basic security to specific endpoints: DELETE
+    */
    @Override
    protected void configure(HttpSecurity http) throws Exception { 
       http

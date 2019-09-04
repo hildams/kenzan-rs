@@ -6,7 +6,7 @@ package com.kenzan.exception;
  * package: com.kenzan.exception<br>
  * Project: kenzan-rs<br>
  * Description: <i></i>
- * 
+ * Custom Exception Handler for Failed dependency
  * <br>
  * Created on Sep 1, 2019<br>
  * @author Hilda Medina Segovia<br>
